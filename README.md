@@ -3,3 +3,6 @@
 - Decorator Design Pattern
 - Adapter Design Pattern
 - Bridge Design Pattern
+- Factory Design Pattern
+- Strategy Design Pattern
+- Proxy Design Pattern

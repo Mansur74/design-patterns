@@ -1,1 +1,2 @@
 - Observer Design Pattern
+- Decorator Design Pattern

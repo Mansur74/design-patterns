@@ -1,3 +1,5 @@
 - Singleton Desing Pattern
 - Observer Design Pattern
 - Decorator Design Pattern
+- Adapter Design Pattern
+- Bridge Design Pattern

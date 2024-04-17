@@ -19,7 +19,7 @@ public class GeneralDirectorateOfHighways implements Observer, Display{
     
     @Override
     public void display() {
-        System.err.print("GeneralDirectorateOfHighways: " + notifications.toString() + "\n");
+        System.out.printf("GeneralDirectorateOfHighways: %s \n", notifications.toString());
         
     }
     

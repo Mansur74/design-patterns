@@ -15,25 +15,25 @@ public class Highway implements Subject{
 
     public void crash(int dead, int injured){
         String msg = "Crash: " + dead + " dead and " + injured + " injured";
-        System.err.println("Crash is notified to:");
+        System.out.println("Crash is notified to:");
         notifyHospitals(msg);
         notifyPoliceDepartments(msg);
-        System.err.println("");
+        System.out.println("");
     }
 
     public void work(String job, int hour) {
         String msg = "Working: " + hour + " hours of " + job;
-        System.err.println("Working is notified to:");
+        System.out.println("Working is notified to:");
         notifyGDH(msg);
-        System.err.println("");
+        System.out.println("");
     }
 
     public void trafficSituation(String intencity) {
         String msg = "Traffic situation: " + intencity;
-        System.err.println("Traffic stuation is notified to:");
+        System.out.println("Traffic stuation is notified to:");
         notifyPoliceDepartments(msg);
         notifyGDH(msg);
-        System.err.println("");
+        System.out.println("");
     }
 
     @Override

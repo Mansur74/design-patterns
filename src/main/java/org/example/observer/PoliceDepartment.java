@@ -21,8 +21,7 @@ public class PoliceDepartment implements Observer, Display{
 
     @Override
     public void display() {
-        System.err.print("PoliceDepartment (" + name + "): " + notifications.toString() + "\n");
-        
+        System.out.printf("PoliceDepartment (%s): %s \n", name, notifications.toString());
     }
     
     

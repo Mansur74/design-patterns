@@ -9,6 +9,6 @@ public class Iphone6ToIphone4Adapter implements Iphone4Charger {
     }
     @Override
     public void charge() {
-        this.iphone.OnCharge(iphone.getName());
+        this.iphone.onCharge();
     }
 }

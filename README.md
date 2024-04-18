@@ -6,3 +6,4 @@
 - Factory Design Pattern
 - Strategy Design Pattern
 - Proxy Design Pattern
+- Iterator Design Pattern

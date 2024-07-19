@@ -9,17 +9,17 @@ public class PlantController {
         this.view = view;
     }
 
-    public void setStudentName(String name)
+    public void setName(String name)
     {
         this.model.setName(name);
     }
 
-    public void setStudentScientificName(String scientificName)
+    public void setScientificName(String scientificName)
     {
         this.model.setName(scientificName);
     }
 
-    public void setStudentAge(String age)
+    public void setAge(String age)
     {
         this.model.setName(age);
     }

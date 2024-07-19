@@ -21,8 +21,7 @@ public class Hospital implements Observer, Display{
     
     @Override
     public void display() {
-        System.out.printf("Hospital (%s): %s \n", name, notifications.toString());
-        
+        System.out.printf("%s: %s \n", name, notifications.toString());
     }
     
 }

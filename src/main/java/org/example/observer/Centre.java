@@ -2,15 +2,16 @@ package org.example.observer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Highway implements Subject{
+public class Centre implements Subject{
 
     private List<Observer> hospitals;
     private List<Observer> policeDepartments;
-    private Observer gdh;
+    private List<Observer> fireDepartments;
 
-    public Highway() {
+    public Centre() {
         this.hospitals = new ArrayList<>();
         this.policeDepartments = new ArrayList<>();
+        this.fireDepartments = new ArrayList<>();
     }
 
     public void crash(int dead, int injured){
@@ -21,10 +22,11 @@ public class Highway implements Subject{
         System.out.println("");
     }
 
-    public void work(String job, int hour) {
-        String msg = "Working: " + hour + " hours of " + job;
-        System.out.println("Working is notified to:");
-        notifyGDH(msg);
+    public void fire(int dead, int injured){
+        String msg = "Fire: " + dead + " dead and " + injured + " injured";
+        System.out.println("Fire is notified to:");
+        notifyHospitals(msg);
+        notifyFireDepartments(msg);
         System.out.println("");
     }
 
@@ -32,9 +34,11 @@ public class Highway implements Subject{
         String msg = "Traffic situation: " + intencity;
         System.out.println("Traffic stuation is notified to:");
         notifyPoliceDepartments(msg);
-        notifyGDH(msg);
+        notifyFireDepartments(msg);
+        notifyHospitals(msg);
         System.out.println("");
     }
+
 
     @Override
     public void registerObserver(Observer observer) {
@@ -42,8 +46,8 @@ public class Highway implements Subject{
             hospitals.add(observer);
         else if(observer instanceof PoliceDepartment)
             policeDepartments.add(observer);
-        else if(observer instanceof GeneralDirectorateOfHighways)
-            gdh = observer;
+        else if(observer instanceof FireDepartment)
+            fireDepartments.add(observer);
             
     }
 
@@ -53,8 +57,8 @@ public class Highway implements Subject{
             hospitals.remove(observer);
         else if(observer instanceof  PoliceDepartment)
             policeDepartments.remove(observer);
-        else if(observer instanceof GeneralDirectorateOfHighways)
-            gdh = null;
+        else if(observer instanceof FireDepartment)
+            fireDepartments.remove(observer);
     }
     
 
@@ -74,10 +78,12 @@ public class Highway implements Subject{
         }
     }
     
-    public void notifyGDH(String msg)
+    public void notifyFireDepartments(String msg)
     {
-        if(this.gdh != null)
-            this.gdh.update(msg);
+        for(Observer fireDepartment : fireDepartments)
+        {
+            fireDepartment.update(msg);
+        }
     }
     
     

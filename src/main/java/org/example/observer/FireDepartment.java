@@ -2,12 +2,14 @@ package org.example.observer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GeneralDirectorateOfHighways implements Observer, Display{ 
-    
+public class FireDepartment implements Observer, Display{
+
     private List<String> notifications;
-    
-    public GeneralDirectorateOfHighways(Subject subject) {
+    private String name;
+
+    public FireDepartment(Subject subject, String name) {
         this.notifications = new ArrayList<>();
+        this.name = name;
         subject.registerObserver(this);
     }
 
@@ -16,11 +18,10 @@ public class GeneralDirectorateOfHighways implements Observer, Display{
         notifications.add(msg);
         display();
     }
-    
+
     @Override
     public void display() {
-        System.out.printf("GeneralDirectorateOfHighways: %s \n", notifications.toString());
-        
+        System.out.printf("%s: %s \n", name, notifications.toString());
     }
     
 }

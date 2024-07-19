@@ -8,7 +8,7 @@ public class Client {
 
         System.out.println();
 
-        plantController.setStudentName("Rose");
+        plantController.setName("Rose");
         plantController.updateView();
 
     }
